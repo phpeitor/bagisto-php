@@ -1670,10 +1670,10 @@ php artisan indexer:index --type=elastic
                     }
                 ],
                 "base_image": {
-                    "small_image_url": "http://localhost/laravel/bagisto/public/cache/small/product/10/CvW2Q3eP4HNUKpQCjyrMUvnwEypVQZCf1VcLAnH4.webp",
-                    "medium_image_url": "http://localhost/laravel/bagisto/public/cache/medium/product/10/CvW2Q3eP4HNUKpQCjyrMUvnwEypVQZCf1VcLAnH4.webp",
-                    "large_image_url": "http://localhost/laravel/bagisto/public/cache/large/product/10/CvW2Q3eP4HNUKpQCjyrMUvnwEypVQZCf1VcLAnH4.webp",
-                    "original_image_url": "http://localhost/laravel/bagisto/public/cache/original/product/10/CvW2Q3eP4HNUKpQCjyrMUvnwEypVQZCf1VcLAnH4.webp"
+                    "small_image_url": "http://localhost:8000/laravel/bagisto/public/cache/small/product/10/CvW2Q3eP4HNUKpQCjyrMUvnwEypVQZCf1VcLAnH4.webp",
+                    "medium_image_url": "http://localhost:8000/laravel/bagisto/public/cache/medium/product/10/CvW2Q3eP4HNUKpQCjyrMUvnwEypVQZCf1VcLAnH4.webp",
+                    "large_image_url": "http://localhost:8000/laravel/bagisto/public/cache/large/product/10/CvW2Q3eP4HNUKpQCjyrMUvnwEypVQZCf1VcLAnH4.webp",
+                    "original_image_url": "http://localhost:8000/laravel/bagisto/public/cache/original/product/10/CvW2Q3eP4HNUKpQCjyrMUvnwEypVQZCf1VcLAnH4.webp"
                 },
                 "product_url_key": "omniheat-mens-solid-hooded-puffer-jacket"
             }
@@ -1719,16 +1719,16 @@ php artisan indexer:index --type=elastic
 -               "logo_url": "https://demo.bagisto.com/bagisto-common/storage/category/2/OYsuHioryn5KrOE7p8wQ2hQ3BReXY5CSbDzhvEk8.webp"
 -           },
 +           "logo": {
-+               "small_image_url": "http://localhost/laravel/bagisto/public/cache/small/category/2/OYsuHioryn5KrOE7p8wQ2hQ3BReXY5CSbDzhvEk8.webp",
-+               "medium_image_url": "http://localhost/laravel/bagisto/public/cache/medium/category/2/OYsuHioryn5KrOE7p8wQ2hQ3BReXY5CSbDzhvEk8.webp",
-+               "large_image_url": "http://localhost/laravel/bagisto/public/cache/large/category/2/OYsuHioryn5KrOE7p8wQ2hQ3BReXY5CSbDzhvEk8.webp",
-+               "original_image_url": "http://localhost/laravel/bagisto/public/cache/original/category/2/OYsuHioryn5KrOE7p8wQ2hQ3BReXY5CSbDzhvEk8.webp"
++               "small_image_url": "http://localhost:8000/laravel/bagisto/public/cache/small/category/2/OYsuHioryn5KrOE7p8wQ2hQ3BReXY5CSbDzhvEk8.webp",
++               "medium_image_url": "http://localhost:8000/laravel/bagisto/public/cache/medium/category/2/OYsuHioryn5KrOE7p8wQ2hQ3BReXY5CSbDzhvEk8.webp",
++               "large_image_url": "http://localhost:8000/laravel/bagisto/public/cache/large/category/2/OYsuHioryn5KrOE7p8wQ2hQ3BReXY5CSbDzhvEk8.webp",
++               "original_image_url": "http://localhost:8000/laravel/bagisto/public/cache/original/category/2/OYsuHioryn5KrOE7p8wQ2hQ3BReXY5CSbDzhvEk8.webp"
 +           },
 +           "banner": {
-+               "small_image_url": "http://localhost/laravel/bagisto/public/cache/small/category/2/OYsuHioryn5KrOE7p8wQ2hQ3BReXY5CSbDzhvEk8.webp",
-+               "medium_image_url": "http://localhost/laravel/bagisto/public/cache/medium/category/2/OYsuHioryn5KrOE7p8wQ2hQ3BReXY5CSbDzhvEk8.webp",
-+               "large_image_url": "http://localhost/laravel/bagisto/public/cache/large/category/2/OYsuHioryn5KrOE7p8wQ2hQ3BReXY5CSbDzhvEk8.webp",
-+               "original_image_url": "http://localhost/laravel/bagisto/public/cache/original/category/2/OYsuHioryn5KrOE7p8wQ2hQ3BReXY5CSbDzhvEk8.webp"
++               "small_image_url": "http://localhost:8000/laravel/bagisto/public/cache/small/category/2/OYsuHioryn5KrOE7p8wQ2hQ3BReXY5CSbDzhvEk8.webp",
++               "medium_image_url": "http://localhost:8000/laravel/bagisto/public/cache/medium/category/2/OYsuHioryn5KrOE7p8wQ2hQ3BReXY5CSbDzhvEk8.webp",
++               "large_image_url": "http://localhost:8000/laravel/bagisto/public/cache/large/category/2/OYsuHioryn5KrOE7p8wQ2hQ3BReXY5CSbDzhvEk8.webp",
++               "original_image_url": "http://localhost:8000/laravel/bagisto/public/cache/original/category/2/OYsuHioryn5KrOE7p8wQ2hQ3BReXY5CSbDzhvEk8.webp"
 +           },
             "meta": {
                 "title": "",
@@ -1768,17 +1768,17 @@ php artisan indexer:index --type=elastic
             "description": "All-in-One Smart Casual Outfit Set",
             "url_key": "all-in-one-smart-casual-outfit-set",
             "base_image": {
-                "small_image_url": "http://localhost/laravel/bagisto/public/cache/small/product/174/6zgmyY14TQ2WqCxEEdENs8tSfI6bAJbq0bjljQOq.webp",
-                "medium_image_url": "http://localhost/laravel/bagisto/public/cache/medium/product/174/6zgmyY14TQ2WqCxEEdENs8tSfI6bAJbq0bjljQOq.webp",
-                "large_image_url": "http://localhost/laravel/bagisto/public/cache/large/product/174/6zgmyY14TQ2WqCxEEdENs8tSfI6bAJbq0bjljQOq.webp",
-                "original_image_url": "http://localhost/laravel/bagisto/public/cache/original/product/174/6zgmyY14TQ2WqCxEEdENs8tSfI6bAJbq0bjljQOq.webp"
+                "small_image_url": "http://localhost:8000/laravel/bagisto/public/cache/small/product/174/6zgmyY14TQ2WqCxEEdENs8tSfI6bAJbq0bjljQOq.webp",
+                "medium_image_url": "http://localhost:8000/laravel/bagisto/public/cache/medium/product/174/6zgmyY14TQ2WqCxEEdENs8tSfI6bAJbq0bjljQOq.webp",
+                "large_image_url": "http://localhost:8000/laravel/bagisto/public/cache/large/product/174/6zgmyY14TQ2WqCxEEdENs8tSfI6bAJbq0bjljQOq.webp",
+                "original_image_url": "http://localhost:8000/laravel/bagisto/public/cache/original/product/174/6zgmyY14TQ2WqCxEEdENs8tSfI6bAJbq0bjljQOq.webp"
             },
             "images": [
                 {
-                    "small_image_url": "http://localhost/laravel/bagisto/public/cache/small/product/174/6zgmyY14TQ2WqCxEEdENs8tSfI6bAJbq0bjljQOq.webp",
-                    "medium_image_url": "http://localhost/laravel/bagisto/public/cache/medium/product/174/6zgmyY14TQ2WqCxEEdENs8tSfI6bAJbq0bjljQOq.webp",
-                    "large_image_url": "http://localhost/laravel/bagisto/public/cache/large/product/174/6zgmyY14TQ2WqCxEEdENs8tSfI6bAJbq0bjljQOq.webp",
-                    "original_image_url": "http://localhost/laravel/bagisto/public/cache/original/product/174/6zgmyY14TQ2WqCxEEdENs8tSfI6bAJbq0bjljQOq.webp"
+                    "small_image_url": "http://localhost:8000/laravel/bagisto/public/cache/small/product/174/6zgmyY14TQ2WqCxEEdENs8tSfI6bAJbq0bjljQOq.webp",
+                    "medium_image_url": "http://localhost:8000/laravel/bagisto/public/cache/medium/product/174/6zgmyY14TQ2WqCxEEdENs8tSfI6bAJbq0bjljQOq.webp",
+                    "large_image_url": "http://localhost:8000/laravel/bagisto/public/cache/large/product/174/6zgmyY14TQ2WqCxEEdENs8tSfI6bAJbq0bjljQOq.webp",
+                    "original_image_url": "http://localhost:8000/laravel/bagisto/public/cache/original/product/174/6zgmyY14TQ2WqCxEEdENs8tSfI6bAJbq0bjljQOq.webp"
                 }
             ],
             "is_new": true,
