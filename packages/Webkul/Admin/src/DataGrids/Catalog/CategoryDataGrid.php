@@ -24,7 +24,12 @@ class CategoryDataGrid extends DataGrid
         $queryBuilder = DB::table('categories')
             ->select(
                 'categories.id as category_id',
-                'category_translations.name',
+                //'category_translations.name',
+                DB::raw("CASE 
+                WHEN category_translations.name = 'mujeres' 
+                THEN CONCAT(category_translations.name, ' <sup>new</sup>') 
+                ELSE category_translations.name 
+                END as name"),
                 'categories.position',
                 'categories.status',
                 'category_translations.locale',
