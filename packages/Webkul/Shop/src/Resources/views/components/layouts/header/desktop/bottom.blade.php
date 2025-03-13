@@ -289,7 +289,7 @@
                         class="inline-block px-5 uppercase"
                     >
                         @{{ category.name }}
-                        <sup v-if="category.name === 'Mujeres'" class="text-red-500">new</sup>
+                        <sup v-if="category.name === 'Mujeres'" class="text-red-500">proximamente</sup>
                     </a>
                 </span>
 
