@@ -283,6 +283,7 @@
         type="text/x-template"
         id="v-product-review-item-template"
     >
+    <!--
         <div class="rounded-xl border border-zinc-200 p-6 max-md:hidden">
             <div class="flex gap-5">
                 <template v-if="review.profile">
@@ -338,7 +339,7 @@
                         class="secondary-button min-h-[34px] rounded-lg px-2 py-1 text-sm max-md:rounded-lg"
                         @click="translate"
                     >
-                        <!-- Spinner -->
+                     
                         <template v-if="isLoading">
                             <img
                                 class="h-5 w-5 animate-spin text-blue-600"
@@ -355,8 +356,8 @@
                         </template>
                     </button>
                 @endif
-                
-                <!-- Review Attachments -->
+
+            </div>
                 <div
                     class="mt-3 flex flex-wrap gap-2"
                     v-if="review.images.length"
@@ -395,14 +396,13 @@
                     </template>
                 </div>
 
-                <!-- Review Images zoomer -->
                 <x-shop::image-zoomer 
                     ::attachments="attachments" 
                     ::is-image-zooming="isImageZooming" 
                     ::initial-index="'file_'+activeIndex"
                 />
             </div>
-        </div>
+        </div>-->
 
         <!-- For Mobile View -->
         <div class="md:hidden">

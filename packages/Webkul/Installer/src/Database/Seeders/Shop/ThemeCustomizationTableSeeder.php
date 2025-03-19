@@ -291,7 +291,7 @@ class ThemeCustomizationTableSeeder extends Seeder
                                 ],
                             ],
 
-                            'column_2' => [
+                            /*'column_2' => [
                                 [
                                     'url'        => $appUrl.'/page/privacy-policy',
                                     'title'      => trans('installer::app.seeders.shop.theme-customizations.footer-links.options.privacy-policy', [], $locale),
@@ -313,7 +313,7 @@ class ThemeCustomizationTableSeeder extends Seeder
                                     'title'      => trans('installer::app.seeders.shop.theme-customizations.footer-links.options.return-policy', [], $locale),
                                     'sort_order' => 5,
                                 ],
-                            ],
+                            ],*/
                         ]),
                     ], [
                         'theme_customization_id' => 12,
