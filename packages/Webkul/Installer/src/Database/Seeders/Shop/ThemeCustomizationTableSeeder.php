@@ -233,7 +233,7 @@ class ThemeCustomizationTableSeeder extends Seeder
                                 'limit'    => 12,
                             ],
                         ]),
-                    ], [
+                    ],/* [
                         'theme_customization_id' => 8,
                         'locale'                 => $locale,
                         'options'                => json_encode([
@@ -241,7 +241,7 @@ class ThemeCustomizationTableSeeder extends Seeder
 
                             'css'  => '.section-game {overflow: hidden;}.section-title,.section-title h2{font-weight:400;font-family:DM Serif Display}.section-title{margin-top:80px;padding-left:15px;padding-right:15px;text-align:center;line-height:90px}.section-title h2{font-size:70px;color:#060c3b;max-width:595px;margin:auto}.collection-card-wrapper{display:flex;flex-wrap:wrap;justify-content:center;gap:30px}.collection-card-wrapper .single-collection-card{position:relative}.collection-card-wrapper .single-collection-card img{border-radius:16px;background-color:#f5f5f5;max-width:100%;height:auto;text-indent:-9999px}.collection-card-wrapper .single-collection-card .overlay-text{font-size:50px;font-weight:400;max-width:234px;font-style:italic;color:#060c3b;font-family:DM Serif Display;position:absolute;bottom:30px;left:30px;margin:0}@media (max-width:1024px){.section-title{padding:0 30px}}@media (max-width:991px){.collection-card-wrapper{flex-wrap:wrap}}@media (max-width:768px) {.collection-card-wrapper .single-collection-card .overlay-text{font-size:32px; bottom:20px}.section-title{margin-top:32px}.section-title h2{font-size:28px;line-height:normal}} @media (max-width:525px){.collection-card-wrapper .single-collection-card .overlay-text{font-size:18px; bottom:10px} .section-title{margin-top:28px}.section-title h2{font-size:20px;} .collection-card-wrapper{gap:10px; 15px; row-gap:15px; column-gap:0px;justify-content: space-between;margin-top: 15px;} .collection-card-wrapper .single-collection-card {width:48%;}}',
                         ]),
-                    ], [
+                    ],*/ [
                         'theme_customization_id' => 9,
                         'locale'                 => $locale,
                         'options'                => json_encode([
@@ -291,7 +291,7 @@ class ThemeCustomizationTableSeeder extends Seeder
                                 ],
                             ],
 
-                            /*'column_2' => [
+                            'column_2' => [
                                 [
                                     'url'        => $appUrl.'/page/privacy-policy',
                                     'title'      => trans('installer::app.seeders.shop.theme-customizations.footer-links.options.privacy-policy', [], $locale),
@@ -313,7 +313,7 @@ class ThemeCustomizationTableSeeder extends Seeder
                                     'title'      => trans('installer::app.seeders.shop.theme-customizations.footer-links.options.return-policy', [], $locale),
                                     'sort_order' => 5,
                                 ],
-                            ],*/
+                            ],
                         ]),
                     ], [
                         'theme_customization_id' => 12,
