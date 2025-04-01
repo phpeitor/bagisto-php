@@ -33,14 +33,22 @@ return [
     */
     'mailers' => [
         'smtp' => [
-            'transport'   => 'smtp',
+            /*'transport'   => 'smtp',
             'host'        => env('MAIL_HOST', 'smtp.mailgun.org'),
             'port'        => env('MAIL_PORT', 587),
             'encryption'  => env('MAIL_ENCRYPTION', 'tls'),
             'username'    => env('MAIL_USERNAME'),
             'password'    => env('MAIL_PASSWORD'),
             'timeout'     => null,
-            'verify_peer' => false,
+            'verify_peer' => false,*/
+            'transport' => 'smtp',
+            'host' => env('MAIL_HOST', 'smtp.office365.com'),
+            'port' => env('MAIL_PORT', 587),
+            'encryption' => env('MAIL_ENCRYPTION', 'tls'),
+            'username' => env('alertas.infraestructura@fortelcorp.com'),
+            'password' => env('____'),
+            'timeout' => null,
+            'auth_mode' => null,
         ],
 
         'ses' => [
@@ -64,6 +72,7 @@ return [
             'transport' => 'log',
             'channel'   => env('MAIL_LOG_CHANNEL'),
         ],
+        
 
         'array' => [
             'transport' => 'array',
