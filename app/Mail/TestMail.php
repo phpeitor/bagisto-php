@@ -18,6 +18,6 @@ class TestMail extends Mailable
     public function build()
     {
         return $this->subject('Correo de Prueba')
-                    ->view('emails.test'); // Esto debe ser EXACTAMENTE 'emails.test'
+                    ->view('emails.test'); 
     }
 }
