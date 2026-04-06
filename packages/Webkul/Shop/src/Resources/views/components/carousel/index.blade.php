@@ -28,6 +28,7 @@
                         <video
                             class="aspect-[2.743/1] max-h-full w-full max-w-full select-none object-cover transition-transform duration-300 ease-in-out will-change-transform"
                             :key="'video-' + index + '-' + (image.image || '')"
+                            :src="image.image"
                             autoplay
                             muted
                             loop
@@ -37,10 +38,6 @@
                             @canplay="playVideo($event)"
                             tabindex="0"
                         >
-                            <source
-                                ::src="image.image"
-                                type="video/webm"
-                            >
                         </video>
                     </template>
 
@@ -306,6 +303,10 @@
 
                     video.muted = true;
 
+                    if (video.readyState === 0) {
+                        video.load();
+                    }
+
                     const promise = video.play();
 
                     if (promise && typeof promise.catch === 'function') {
@@ -325,6 +326,10 @@
 
                         if (index === activeIndex) {
                             video.muted = true;
+
+                            if (video.readyState === 0) {
+                                video.load();
+                            }
 
                             const promise = video.play();
 
