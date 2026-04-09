@@ -77,8 +77,8 @@ These steps are intended for local/dev environments in this repository:
 7. Start the local server.
 
 ```bash
-git clone <your-repo-url> etlweb
-cd etlweb
+git clone <your-repo-url> bagisto
+cd bagisto
 
 composer install
 cp .env.example .env
