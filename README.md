@@ -64,6 +64,58 @@ Follow the [Getting Started with Bagisto](https://www.youtube.com/watch?v=s_DhQr
 
 You can browse through the Free [Live Demo](https://demo.bagisto.com/)
 
+## Local Installation (Quick Steps)
+
+These steps are intended for local/dev environments in this repository:
+
+1. Clone the repository and enter the project folder.
+2. Install PHP dependencies.
+3. Copy environment variables and generate app key.
+4. Configure database credentials in `.env`.
+5. Run migrations and Bagisto installer.
+6. Install frontend dependencies and build assets.
+7. Start the local server.
+
+```bash
+git clone <your-repo-url> etlweb
+cd etlweb
+
+composer install
+cp .env.example .env
+php artisan key:generate
+
+# Edit .env and set DB_* values before continuing
+
+php artisan migrate
+php artisan bagisto:install
+
+npm install
+npm run build
+
+php artisan storage:link
+php artisan serve
+```
+
+Optional during development:
+
+```bash
+npm run dev
+```
+
+If you do not use local PHP server, point your web server document root to the `public/` directory.
+
+## Project Change Context
+
+For customizations and fixes applied in this workspace (GIF support, category image behavior, product description HTML rendering, and CSS list overrides), review:
+
+- [CAMBIOS_IMPLEMENTADOS.md](CAMBIOS_IMPLEMENTADOS.md)
+
+After applying new view/config changes, you can clear cache with:
+
+```bash
+php artisan optimize:clear
+```
+
 ## ☁️ Cloud Installation via Amazon AMI
 
 You can also deploy Bagisto quickly using our pre-configured Amazon Machine Image (AMI) available on the AWS Marketplace:
