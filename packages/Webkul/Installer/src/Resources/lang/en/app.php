@@ -129,9 +129,9 @@ return [
 
         'core' => [
             'channels' => [
-                'meta-description' => 'Demo store meta description',
-                'meta-keywords' => 'Demo store meta keyword',
-                'meta-title' => 'Demo store',
+                'meta-description' => 'Metadatape store meta description',
+                'meta-keywords' => 'Metadatape store meta keyword',
+                'meta-title' => 'Metadatape store',
                 'name' => 'Default',
             ],
 

@@ -4832,8 +4832,8 @@ return [
                 'add-image-btn' => 'Agregar Imagen',
                 'ai-add-image-btn' => 'Magia IA',
                 'ai-btn-info' => 'Generar Imagen',
-                'allowed-types' => 'png, jpeg, jpg',
-                'not-allowed-error' => 'Solo se permiten archivos de imagen (.jpeg, .jpg, .png, ..).',
+                'allowed-types' => 'png, jpeg, jpg, gif',
+                'not-allowed-error' => 'Solo se permiten archivos de imagen (.jpeg, .jpg, .png, .gif, ..).',
 
                 'ai-generation' => [
                     '1024x1024' => '1024x1024',

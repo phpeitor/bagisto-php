@@ -246,13 +246,24 @@ class CategoryRepository extends Repository
                         Storage::delete($category->{$type});
                     }
 
-                    $manager = new ImageManager;
+                    $uploadedFile = request()->file($file);
 
-                    $image = $manager->make(request()->file($file))->encode('webp');
+                    $extension = strtolower($uploadedFile->getClientOriginalExtension());
 
-                    $category->{$type} = 'category/'.$category->id.'/'.Str::random(40).'.webp';
+                    if ($extension === 'gif') {
+                        $category->{$type} = $uploadedFile->storeAs(
+                            'category/'.$category->id,
+                            Str::random(40).'.gif'
+                        );
+                    } else {
+                        $manager = new ImageManager;
 
-                    Storage::put($category->{$type}, $image);
+                        $image = $manager->make($uploadedFile)->encode('webp');
+
+                        $category->{$type} = 'category/'.$category->id.'/'.Str::random(40).'.webp';
+
+                        Storage::put($category->{$type}, $image);
+                    }
 
                     $category->save();
                 }

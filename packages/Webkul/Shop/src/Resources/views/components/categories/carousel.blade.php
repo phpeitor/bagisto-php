@@ -33,12 +33,8 @@
                             :aria-label="category.name"
                         >
                             <x-shop::media.images.lazy
-                                ::src="category.logo?.small_image_url || fallback"
-                                ::srcset="`
-                                    ${(category.logo?.small_image_url || fallback)} 60w,
-                                    ${(category.logo?.medium_image_url || fallback)} 110w,
-                                    ${(category.logo?.large_image_url || fallback)} 300w
-                                `"
+                                ::src="getCategoryImageSrc(category)"
+                                ::srcset="getCategoryImageSrcset(category)"
                                 sizes="(max-width: 640px) 60px, 110px"
                                 width="110"
                                 height="110"
@@ -137,6 +133,28 @@
                     const container = this.$refs.swiperContainer;
 
                     container.scrollLeft += this.offset;
+                },
+
+                isGifLogo(category) {
+                    const url = String(category?.logo?.original_image_url || category?.logo?.small_image_url || '').toLowerCase();
+
+                    return url.endsWith('.gif') || url.includes('.gif?');
+                },
+
+                getCategoryImageSrc(category) {
+                    if (this.isGifLogo(category)) {
+                        return category?.logo?.original_image_url || category?.logo?.small_image_url || this.fallback;
+                    }
+
+                    return category?.logo?.small_image_url || this.fallback;
+                },
+
+                getCategoryImageSrcset(category) {
+                    if (this.isGifLogo(category)) {
+                        return null;
+                    }
+
+                    return `${(category?.logo?.small_image_url || this.fallback)} 60w, ${(category?.logo?.medium_image_url || this.fallback)} 110w, ${(category?.logo?.large_image_url || this.fallback)} 300w`;
                 },
             },
         });

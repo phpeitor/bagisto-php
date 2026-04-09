@@ -129,9 +129,9 @@ return [
 
         'core' => [
             'channels' => [
-                'meta-description' => 'Descripción de Meta de la Tienda de Demostración',
-                'meta-keywords' => 'Palabras Clave de Meta de la Tienda de Demostración',
-                'meta-title' => 'Tienda de Demostración',
+                'meta-description' => 'Descripción de Meta de la Metadatape Store',
+                'meta-keywords' => 'Palabras Clave de Meta de la Metadatape Store',
+                'meta-title' => 'Metadatape Store',
                 'name' => 'Predeterminado',
             ],
 

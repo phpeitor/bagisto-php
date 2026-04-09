@@ -30,9 +30,9 @@ class CategoryRequest extends FormRequest
         $rules = [
             'position' => 'required|integer',
             'logo_path' => 'array',
-            'logo_path.*' => 'mimes:bmp,jpeg,jpg,png,webp',
+            'logo_path.*' => 'mimes:bmp,jpeg,jpg,png,webp,gif',
             'banner_path' => 'array',
-            'banner_path.*' => 'mimes:bmp,jpeg,jpg,png,webp',
+            'banner_path.*' => 'mimes:bmp,jpeg,jpg,png,webp,gif',
             'attributes' => 'required|array',
             'attributes.*' => 'required',
         ];
