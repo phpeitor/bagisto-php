@@ -87,7 +87,7 @@
                     :is-selected="true"
                 >
                     <div class="container mt-[60px] max-1180:px-5 prose prose-sm max-w-none prose-ul:text-zinc-500 prose-li:text-zinc-500 prose-ol:text-zinc-500">
-                        <div class="text-lg text-zinc-500 max-1180:text-sm">
+                        <div class="product-description-content text-lg text-zinc-500 max-1180:text-sm">
                             {!! html_entity_decode($product->description) !!}
                         </div>
                     </div>
@@ -171,7 +171,7 @@
             </x-slot>
 
             <x-slot:content class="max-sm:px-0">
-                <div class="mb-5 text-lg text-zinc-500 max-1180:text-sm max-md:mb-1 max-md:px-4 prose prose-sm max-w-none prose-ul:text-zinc-500 prose-li:text-zinc-500 prose-ol:text-zinc-500">
+                <div class="product-description-content mb-5 text-lg text-zinc-500 max-1180:text-sm max-md:mb-1 max-md:px-4 prose prose-sm max-w-none prose-ul:text-zinc-500 prose-li:text-zinc-500 prose-ol:text-zinc-500">
                     {!! html_entity_decode($product->description) !!}
                 </div>
             </x-slot>
@@ -732,5 +732,25 @@
                 }
             });
         </script>
+    @endPushOnce
+
+    @pushOnce('styles')
+        <style>
+            .product-description-content ul {
+                list-style: disc !important;
+                margin: 0 0 1rem 1.25rem;
+                padding: 0;
+            }
+
+            .product-description-content ol {
+                list-style: decimal !important;
+                margin: 0 0 1rem 1.25rem;
+                padding: 0;
+            }
+
+            .product-description-content li {
+                margin-bottom: 0.35rem;
+            }
+        </style>
     @endPushOnce
 </x-shop::layouts>
