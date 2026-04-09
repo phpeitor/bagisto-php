@@ -86,10 +86,10 @@
                     :title="trans('shop::app.products.view.description')"
                     :is-selected="true"
                 >
-                    <div class="container mt-[60px] max-1180:px-5">
-                        <p class="text-lg text-zinc-500 max-1180:text-sm">
-                            {!! $product->description !!}
-                        </p>
+                    <div class="container mt-[60px] max-1180:px-5 prose prose-sm max-w-none prose-ul:text-zinc-500 prose-li:text-zinc-500 prose-ol:text-zinc-500">
+                        <div class="text-lg text-zinc-500 max-1180:text-sm">
+                            {!! html_entity_decode($product->description) !!}
+                        </div>
                     </div>
                 </x-shop::tabs.item>
 
@@ -171,8 +171,8 @@
             </x-slot>
 
             <x-slot:content class="max-sm:px-0">
-                <div class="mb-5 text-lg text-zinc-500 max-1180:text-sm max-md:mb-1 max-md:px-4">
-                    {!! $product->description !!}
+                <div class="mb-5 text-lg text-zinc-500 max-1180:text-sm max-md:mb-1 max-md:px-4 prose prose-sm max-w-none prose-ul:text-zinc-500 prose-li:text-zinc-500 prose-ol:text-zinc-500">
+                    {!! html_entity_decode($product->description) !!}
                 </div>
             </x-slot>
         </x-shop::accordion>
