@@ -31,8 +31,6 @@ class ThemeCustomizationTableSeeder extends Seeder
 
         $defaultLocale = $parameters['default_locale'] ?? config('app.locale');
 
-        $appUrl = config('app.url');
-
         DB::table('theme_customizations')
             ->insert([
                 [
@@ -265,27 +263,27 @@ class ThemeCustomizationTableSeeder extends Seeder
                         'options' => json_encode([
                             'column_1' => [
                                 [
-                                    'url' => $appUrl.'/page/about-us',
+                                    'url' => '/page/about-us',
                                     'title' => trans('installer::app.seeders.shop.theme-customizations.footer-links.options.about-us', [], $locale),
                                     'sort_order' => 1,
                                 ], [
-                                    'url' => $appUrl.'/contact-us',
+                                    'url' => '/contact-us',
                                     'title' => trans('installer::app.seeders.shop.theme-customizations.footer-links.options.contact-us', [], $locale),
                                     'sort_order' => 2,
                                 ], [
-                                    'url' => $appUrl.'/page/customer-service',
+                                    'url' => '/page/customer-service',
                                     'title' => trans('installer::app.seeders.shop.theme-customizations.footer-links.options.customer-service', [], $locale),
                                     'sort_order' => 3,
                                 ], [
-                                    'url' => $appUrl.'/page/whats-new',
+                                    'url' => '/page/whats-new',
                                     'title' => trans('installer::app.seeders.shop.theme-customizations.footer-links.options.whats-new', [], $locale),
                                     'sort_order' => 4,
                                 ], [
-                                    'url' => $appUrl.'/page/terms-of-use',
+                                    'url' => '/page/terms-of-use',
                                     'title' => trans('installer::app.seeders.shop.theme-customizations.footer-links.options.terms-of-use', [], $locale),
                                     'sort_order' => 5,
                                 ], [
-                                    'url' => $appUrl.'/page/terms-conditions',
+                                    'url' => '/page/terms-conditions',
                                     'title' => trans('installer::app.seeders.shop.theme-customizations.footer-links.options.terms-conditions', [], $locale),
                                     'sort_order' => 6,
                                 ],
@@ -293,23 +291,23 @@ class ThemeCustomizationTableSeeder extends Seeder
 
                             'column_2' => [
                                 [
-                                    'url' => $appUrl.'/page/privacy-policy',
+                                    'url' => '/page/privacy-policy',
                                     'title' => trans('installer::app.seeders.shop.theme-customizations.footer-links.options.privacy-policy', [], $locale),
                                     'sort_order' => 1,
                                 ], [
-                                    'url' => $appUrl.'/page/payment-policy',
+                                    'url' => '/page/payment-policy',
                                     'title' => trans('installer::app.seeders.shop.theme-customizations.footer-links.options.payment-policy', [], $locale),
                                     'sort_order' => 2,
                                 ], [
-                                    'url' => $appUrl.'/page/shipping-policy',
+                                    'url' => '/page/shipping-policy',
                                     'title' => trans('installer::app.seeders.shop.theme-customizations.footer-links.options.shipping-policy', [], $locale),
                                     'sort_order' => 3,
                                 ], [
-                                    'url' => $appUrl.'/page/refund-policy',
+                                    'url' => '/page/refund-policy',
                                     'title' => trans('installer::app.seeders.shop.theme-customizations.footer-links.options.refund-policy', [], $locale),
                                     'sort_order' => 4,
                                 ], [
-                                    'url' => $appUrl.'/page/return-policy',
+                                    'url' => '/page/return-policy',
                                     'title' => trans('installer::app.seeders.shop.theme-customizations.footer-links.options.return-policy', [], $locale),
                                     'sort_order' => 5,
                                 ],
