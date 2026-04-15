@@ -6,7 +6,7 @@ return [
             'email' => 'Dirección de Correo Electrónico',
             'forget-password-link' => '¿Olvidaste tu Contraseña?',
             'password' => 'Contraseña',
-            'powered-by-description' => 'Desarrollado por :bagisto, un proyecto de código abierto de :webkul.',
+            'powered-by-description' => 'Desarrollado por amvsoft.tech❤️',
             'submit-btn' => 'Iniciar Sesión',
             'title' => 'Iniciar Sesión',
         ],
@@ -16,7 +16,7 @@ return [
                 'email' => 'Correo Electrónico Registrado',
                 'email-not-exist' => 'El Correo Electrónico no Existe',
                 'page-title' => 'Olvidar Contraseña',
-                'powered-by-description' => 'Desarrollado por :bagisto, un proyecto de código abierto de :webkul.',
+                'powered-by-description' => 'Desarrollado por amvsoft.tech❤️',
                 'reset-link-sent' => 'Enlace para Restablecer la Contraseña Enviado',
                 'sign-in-link' => '¿Volver a Iniciar Sesión?',
                 'submit-btn' => 'Restablecer',
@@ -29,7 +29,7 @@ return [
             'confirm-password' => 'Confirmar Contraseña',
             'email' => 'Correo Electrónico Registrado',
             'password' => 'Contraseña',
-            'powered-by-description' => 'Desarrollado por :bagisto, un proyecto de código abierto de :webkul.',
+            'powered-by-description' => 'Desarrollado por amvsoft.tech❤️',
             'submit-btn' => 'Restablecer Contraseña',
             'title' => 'Restablecer Contraseña',
         ],
@@ -4717,7 +4717,7 @@ return [
             ],
 
             'powered-by' => [
-                'description' => 'Desarrollado por :bagisto, un proyecto de código abierto de :webkul.',
+                'description' => 'Desarrollado por amvsoft.tech❤️',
             ],
         ],
 
@@ -5029,7 +5029,7 @@ return [
     ],
 
     'footer' => [
-        'copy-right' => 'Desarrollado por <a href="https://bagisto.com/" target="_blank">Bagisto</a>, Un Proyecto Comunitario por <a href="https://webkul.com/" target="_blank">Webkul</a>',
+        'copy-right' => 'Desarrollado por <a href="https://www.instagram.com/amvsoft.tech/" target="_blank">amvsoft.tech❤️</a>, Un Proyecto de Código Abierto',
     ],
 
     'emails' => [

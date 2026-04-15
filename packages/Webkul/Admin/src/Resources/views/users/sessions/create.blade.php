@@ -4,8 +4,23 @@
         @lang('admin::app.users.sessions.title')
     </x-slot>
 
-    <div class="flex h-[100vh] items-center justify-center">
-        <div class="flex flex-col items-center gap-5">
+    <div class="relative flex h-[100vh] items-center justify-center overflow-hidden">
+        <!-- Video Background -->
+        <video
+            class="absolute inset-0 h-full w-full object-cover"
+            autoplay
+            muted
+            loop
+            playsinline
+        >
+            <source src="https://metadatape.com/storage/theme/1/ICtzJ4awHLLIAazThsJ5fTIT92NN2DfowyhZx5B6.webm" type="video/webm">
+        </video>
+
+        <!-- Dark Overlay (opcional, para mejorar legibilidad del login) -->
+        <div class="absolute inset-0 opacity-90"></div>
+
+        <!-- Login Content -->
+        <div class="relative z-10 flex flex-col items-center gap-5">
             <!-- Logo -->            
             @if ($logo = core()->getConfigData('general.design.admin_logo.logo_image'))
                 <img
@@ -98,7 +113,7 @@
             </div>
 
             <!-- Powered By -->
-            <div class="text-sm font-normal">
+            <div class="text-sm font-normal text-white-600 dark:text-white-400">
                 @lang('admin::app.users.sessions.powered-by-description', [
                     'bagisto' => '<a class="text-blue-600 hover:underline" href="https://bagisto.com/en/">Bagisto</a>',
                     'webkul' => '<a class="text-blue-600 hover:underline" href="https://webkul.com/">Webkul</a>',
