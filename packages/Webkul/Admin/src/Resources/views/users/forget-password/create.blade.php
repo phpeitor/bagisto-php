@@ -4,7 +4,10 @@
         @lang('admin::app.users.forget-password.create.page-title')
     </x-slot>
 
-    <div class="flex h-[100vh] items-center justify-center">
+    <div 
+        class="relative flex h-[100vh] items-center justify-center overflow-hidden bg-cover bg-center bg-no-repeat"
+        style="background-image: url('https://mir-s3-cdn-cf.behance.net/project_modules/1400/ab0914241333935.695d22a527427.gif');"
+    >
         <div class="flex flex-col items-center gap-5">
             <!-- Logo -->
             @if ($logo = core()->getConfigData('general.design.admin_logo.logo_image'))

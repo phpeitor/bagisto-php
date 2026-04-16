@@ -4,20 +4,10 @@
         @lang('admin::app.users.sessions.title')
     </x-slot>
 
-    <div class="relative flex h-[100vh] items-center justify-center overflow-hidden">
-        <!-- Video Background -->
-        <video
-            class="absolute inset-0 h-full w-full object-cover"
-            autoplay
-            muted
-            loop
-            playsinline
-        >
-            <source src="https://metadatape.com/storage/theme/1/ICtzJ4awHLLIAazThsJ5fTIT92NN2DfowyhZx5B6.webm" type="video/webm">
-        </video>
-
-        <!-- Dark Overlay (opcional, para mejorar legibilidad del login) -->
-        <div class="absolute inset-0 opacity-90"></div>
+    <div
+        class="relative flex h-[100vh] items-center justify-center overflow-hidden bg-cover bg-center bg-no-repeat"
+        style="background-image: url('https://mir-s3-cdn-cf.behance.net/project_modules/1400/25617e241333935.695d22ab8c96c.gif');"
+    >
 
         <!-- Login Content -->
         <div class="relative z-10 flex flex-col items-center gap-5">
