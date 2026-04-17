@@ -969,7 +969,7 @@ return [
                 'continue-to-checkout' => 'Continuar con el Pago',
                 'empty-cart' => 'Tu carrito está vacío',
                 'excl-tax' => 'Excl. Impuestos:',
-                'offer-on-orders' => '¡Obtén hasta un 30% de DESCUENTO en tu primer pedido!',
+                'offer-on-orders' => '¡Obtén hasta un 40% de DESCUENTO en tu primer pedido!',
                 'remove' => 'Eliminar',
                 'see-details' => 'Ver Detalles',
                 'shopping-cart' => 'Carrito de Compras',
