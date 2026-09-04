@@ -39,5 +39,6 @@ skills-lock.json
 /storage/dcc-data/
 /test-results
 /vendor
+/claude
 yarn.lock
 yarn-error.log

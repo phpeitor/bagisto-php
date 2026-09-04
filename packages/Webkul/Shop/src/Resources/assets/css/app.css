@@ -527,3 +527,45 @@ img.lazy {
         @apply ltr:left-1/2 rtl:right-1/2 ltr:translate-x-1/2 rtl:translate-x-[-50%] opacity-100;
     }
 }
+
+.phpeitor-brandmark {
+    position: relative;
+    overflow: hidden;
+    background-color: #F1EADF;
+    padding: 24px 0;
+    text-align: center;
+}
+
+.phpeitor-logo {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.phpeitor-trace {
+    fill: none;
+    stroke: #f43f5e;
+    stroke-opacity: 1;
+    stroke-width: 2;
+    stroke-dasharray: 70 200;
+    filter: drop-shadow(0 0 8px #f43f5e) drop-shadow(0 0 3px #fff);
+    animation: phpeitor-trace 5s linear infinite;
+}
+
+@keyframes phpeitor-trace {
+    to {
+        stroke-dashoffset: -270px;
+    }
+}
+
+@media (max-width: 640px) {
+    .phpeitor-brandmark {
+        padding: 16px 0;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .phpeitor-trace {
+        display: none;
+    }
+}
