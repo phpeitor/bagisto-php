@@ -1,0 +1,19 @@
+{
+    "name": "bagisto/laravel-culqi",
+    "license": "MIT",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Webkul\\Culqi\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Webkul\\Culqi\\Providers\\CulqiServiceProvider"
+            ],
+            "aliases": {}
+        }
+    },
+    "minimum-stability": "dev"
+}

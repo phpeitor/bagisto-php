@@ -11,6 +11,7 @@ use Webkul\Checkout\Providers\CheckoutServiceProvider;
 use Webkul\CMS\Providers\CMSServiceProvider;
 use Webkul\Core\Providers\CoreServiceProvider;
 use Webkul\Core\Providers\EnvValidatorServiceProvider;
+use Webkul\Culqi\Providers\CulqiServiceProvider;
 use Webkul\Customer\Providers\CustomerServiceProvider;
 use Webkul\DataGrid\Providers\DataGridServiceProvider;
 use Webkul\DataTransfer\Providers\DataTransferServiceProvider;
@@ -55,6 +56,7 @@ return [
     CheckoutServiceProvider::class,
     CoreServiceProvider::class,
     EnvValidatorServiceProvider::class,
+    CulqiServiceProvider::class,
     CustomerServiceProvider::class,
     DataGridServiceProvider::class,
     DataTransferServiceProvider::class,

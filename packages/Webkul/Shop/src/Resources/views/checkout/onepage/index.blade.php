@@ -118,6 +118,15 @@
                                 {!! view_render_event('bagisto.shop.checkout.onepage.summary.paypal_smart_button.after') !!}
                             </template>
 
+                            <template v-else-if="cart.payment_method == 'culqi'">
+                                {!! view_render_event('bagisto.shop.checkout.onepage.summary.culqi.before') !!}
+
+                                <!-- Culqi Checkout Vue Component -->
+                                <v-culqi-checkout></v-culqi-checkout>
+
+                                {!! view_render_event('bagisto.shop.checkout.onepage.summary.culqi.after') !!}
+                            </template>
+
                             <template v-else>
                                 <x-shop::button
                                     type="button"
