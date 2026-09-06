@@ -209,8 +209,11 @@
 
                             <!-- Actions -->
                             <div class="grid place-content-start gap-1 text-right">
-                                <p class="font-semibold text-gray-800 dark:text-white">
-                                    @{{ $admin.formatPrice(element.price) }}    
+                                <p
+                                    class="font-semibold text-gray-800 dark:text-white"
+                                    v-if="element.price > 0"
+                                >
+                                    @{{ $admin.formatPrice(element.price) }}
                                 </p>
 
                                 <div class="flex items-center gap-x-5">

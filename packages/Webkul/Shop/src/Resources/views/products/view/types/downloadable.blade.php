@@ -54,7 +54,7 @@
                             class="cursor-pointer max-sm:text-sm ltr:ml-1 rtl:mr-1"
                             v-pre
                         >
-                            {{ $link->title . ' + ' . core()->currency($link->price) }}
+                            {{ $link->price > 0 ? $link->title . ' + ' . core()->currency($link->price) : $link->title }}
                         </label>
                     </div>
 

@@ -548,6 +548,7 @@ img.lazy {
     stroke-opacity: 1;
     stroke-width: 2;
     stroke-dasharray: 70 200;
+    vector-effect: non-scaling-stroke;
     filter: drop-shadow(0 0 8px #f43f5e) drop-shadow(0 0 3px #fff);
     animation: phpeitor-trace 5s linear infinite;
 }
@@ -556,6 +557,16 @@ img.lazy {
     to {
         stroke-dashoffset: -270px;
     }
+}
+
+.phpeitor-brand-header {
+    display: block;
+    overflow: visible;
+}
+
+.phpeitor-brand-header .phpeitor-trace {
+    stroke-width: 1.5;
+    filter: drop-shadow(0 0 3px #f43f5e) drop-shadow(0 0 1px #fff);
 }
 
 @media (max-width: 640px) {

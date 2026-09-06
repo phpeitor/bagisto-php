@@ -537,7 +537,7 @@ return [
                 'customer-service' => 'Servicio al cliente',
                 'email' => 'Correo Electrónico',
                 'footer-content' => 'Contenido del pie de página',
-                'footer-text' => '© Derechos de autor 2010 - :current_year, amvsoft.tech. Todos los derechos reservados.',
+                'footer-text' => '© Derechos de autor 2019 - :current_year, amvsoft.tech. Todos los derechos reservados.',
                 'locale' => 'Idioma',
                 'newsletter-text' => '¡Prepárate para nuestro divertido boletín!',
                 'order-return' => 'Pedido y devolución',
