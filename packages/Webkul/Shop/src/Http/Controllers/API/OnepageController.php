@@ -133,6 +133,8 @@ class OnepageController extends APIController
             ], Response::HTTP_FORBIDDEN);
         }
 
+        $this->syncCurrencyWithPaymentMethod($validatedData['payment']['method'] ?? null);
+
         Cart::collectTotals();
 
         $cart = Cart::getCart();
@@ -140,6 +142,49 @@ class OnepageController extends APIController
         return [
             'cart' => new CartResource($cart),
         ];
+    }
+
+    /**
+     * Some payment methods (e.g. PayPal) don't support every store currency. Switch the
+     * session currency to one the method accepts, and restore the customer's own choice
+     * once they move to a method without such a restriction.
+     */
+    protected function syncCurrencyWithPaymentMethod(?string $method): void
+    {
+        $acceptedCurrencies = array_filter(array_map(
+            'trim',
+            explode(',', (string) core()->getConfigData("sales.payment_methods.{$method}.accepted_currencies"))
+        ));
+
+        $currentCurrencyCode = core()->getCurrentCurrencyCode();
+
+        if (
+            $acceptedCurrencies
+            && ! in_array($currentCurrencyCode, $acceptedCurrencies)
+        ) {
+            session()->put('currency_before_payment_switch', $currentCurrencyCode);
+
+            $this->switchCurrency($acceptedCurrencies[0]);
+
+            return;
+        }
+
+        if (
+            ! $acceptedCurrencies
+            && ($previousCurrencyCode = session()->pull('currency_before_payment_switch'))
+        ) {
+            $this->switchCurrency($previousCurrencyCode);
+        }
+    }
+
+    /**
+     * Switch the active currency for the current request and persist it in the session.
+     */
+    protected function switchCurrency(string $currencyCode): void
+    {
+        core()->setCurrentCurrency($currencyCode);
+
+        session()->put('currency', $currencyCode);
     }
 
     /**

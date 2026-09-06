@@ -144,6 +144,10 @@ class Downloadable extends AbstractType
     public function prepareForCart($data)
     {
         if (empty($data['links'])) {
+            $data['links'] = $this->product->downloadable_links->pluck('id')->all();
+        }
+
+        if (empty($data['links'])) {
             return trans('product::app.checkout.cart.missing-links');
         }
 

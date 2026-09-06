@@ -41,6 +41,7 @@
                             class="peer hidden"
                             rules="required"
                             label="@lang('shop::app.products.view.type.downloadable.links')"
+                            checked
                         >
                         </v-field>
                         
