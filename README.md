@@ -55,7 +55,7 @@ npm run dev
 
 Si no usas el servidor local de PHP, apunta el document root de tu servidor web a `public/`.
 
-## Después de tocar config/vistas
+## Config/vistas
 
 Este proyecto tiene varias capas de caché (config, vistas compiladas, full-page cache) — ver [`BACKEND_STANDARDS.md`](.ia-context/BACKEND_STANDARDS.md#caché--checklist-después-de-cambios-backend) para el detalle. Como mínimo:
 
