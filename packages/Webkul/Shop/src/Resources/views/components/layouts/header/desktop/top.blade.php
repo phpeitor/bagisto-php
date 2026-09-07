@@ -226,6 +226,14 @@
             data() {
                 return {
                     locales: @json(core()->getCurrentChannel()->locales()->orderBy('name')->get()),
+
+                    /**
+                     * Currency that should be selected automatically when switching to a given locale.
+                     */
+                    localeCurrencyMap: {
+                        en: 'USD',
+                        es: '{{ core()->getBaseCurrencyCode() }}',
+                    },
                 };
             },
 
@@ -234,6 +242,10 @@
                     let url = new URL(window.location.href);
 
                     url.searchParams.set('locale', locale.code);
+
+                    if (this.localeCurrencyMap[locale.code]) {
+                        url.searchParams.set('currency', this.localeCurrencyMap[locale.code]);
+                    }
 
                     window.location.href = url.href;
                 }
