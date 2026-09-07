@@ -366,9 +366,9 @@
 
                                 {!! view_render_event('bagisto.shop.products.short_description.before', ['product' => $product]) !!}
 
-                                <p class="mt-6 text-lg text-zinc-500 max-sm:mt-1.5 max-sm:text-sm">
-                                    {!! $product->short_description !!}
-                                </p>
+                                <div class="product-description-content mt-6 text-lg text-zinc-500 max-sm:mt-1.5 max-sm:text-sm">
+                                    {!! html_entity_decode($product->short_description) !!}
+                                </div>
 
                                 {!! view_render_event('bagisto.shop.products.short_description.after', ['product' => $product]) !!}
 

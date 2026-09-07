@@ -67,6 +67,18 @@ class Controller extends ImageCacheController
         }
 
         /**
+         * GD (and Intervention Image on top of it) only reads the first frame of an
+         * animated GIF, so running it through the cache pipeline flattens the animation.
+         * Serve animated GIFs untouched instead of resizing/re-encoding them.
+         */
+        if (
+            $template != 'logo'
+            && strtolower(pathinfo($path, PATHINFO_EXTENSION)) === 'gif'
+        ) {
+            return $this->buildResponse(file_get_contents($path));
+        }
+
+        /**
          * Image manipulation based on callback
          */
         $manager = new ImageManager(Config::get('image'));
