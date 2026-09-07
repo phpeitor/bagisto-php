@@ -1,7 +1,7 @@
 # PHPeitor Store 🛒
 
 <a href="https://www.instagram.com/amvsoft.tech/">
-  <img src="https://metadatape.com/cache/original/product/18/K9q2cOfmv3r9vxIzZ11Ku2C13dTFhnpmkZxSXvJR.webp" alt="Instagram" width="600">
+  <img src="https://metadatape.com/cache/original/product/18/K9q2cOfmv3r9vxIzZ11Ku2C13dTFhnpmkZxSXvJR.webp" alt="Instagram" width="800">
 </a>
 
 Tienda e-commerce en producción para **[metadatape.com](https://metadatape.com)**, construida sobre [Bagisto](https://www.bagisto.com/) (framework e-commerce open source en [Laravel](https://laravel.com/)). Vende templates y productos digitales (dashboards admin, UI kits, SaaS starters) en dos idiomas (Español/Inglés) con precio dual PEN/USD.
