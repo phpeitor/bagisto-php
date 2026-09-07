@@ -2,7 +2,7 @@
 
 Fecha de actualizacion: 2026-04-09
 
-## 1) Proyecto etlweb (Bagisto)
+## 1 Proyecto etlweb (Bagisto)
 
 ### Soporte GIF en categorias (admin + backend)
 - Archivo: `packages/Webkul/Admin/src/Http/Requests/CategoryRequest.php`
@@ -30,7 +30,7 @@ Fecha de actualizacion: 2026-04-09
 - Para GIF se usa `original_image_url` y `srcset = null`.
 - Para otros formatos se mantiene `srcset` responsivo.
 
-## 2) Descripcion de productos (HTML en ul/li)
+## 2 Descripcion de productos (HTML en ul/li)
 
 ### Render HTML de descripcion
 - Archivo: `packages/Webkul/Shop/src/Resources/views/products/view.blade.php`
@@ -46,12 +46,12 @@ Fecha de actualizacion: 2026-04-09
 - `.product-description-content li { margin-bottom: ... }`
 - Objetivo: neutralizar el reset global `ol, ul, menu { list-style: none; }` solo dentro de la descripcion.
 
-## 3) Limpieza de cache ejecutada
+## 3 Limpieza de cache ejecutada
 
 Se ejecuto varias veces para aplicar cambios de vistas/config:
 - `php artisan optimize:clear`
 
-## 4) Resultado funcional esperado
+## 4 Resultado funcional esperado
 
 - Subida de GIF en categorias habilitada en admin.
 - GIF animado visible en storefront (sin conversion/caching estatico).
