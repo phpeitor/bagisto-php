@@ -85,7 +85,7 @@ class MenuItem
      */
     public function isActive(): bool
     {
-        if (request()->fullUrlIs($this->getUrl().'*')) {
+        if (request()->routeIs($this->getRoutePattern())) {
             return true;
         }
 
@@ -98,5 +98,26 @@ class MenuItem
         }
 
         return false;
+    }
+
+    /**
+     * Get the route name pattern used to match this item as active.
+     *
+     * Matches by route name namespace (e.g. "admin.customers.gdpr.*")
+     * rather than by URL prefix, so sibling resources that happen to
+     * share a URL prefix (e.g. "admin/customers" and "admin/customers/gdpr")
+     * don't both light up as active at the same time.
+     */
+    private function getRoutePattern(): string
+    {
+        $segments = explode('.', $this->route);
+
+        if (count($segments) < 3) {
+            return $this->route;
+        }
+
+        array_pop($segments);
+
+        return implode('.', $segments).'.*';
     }
 }
