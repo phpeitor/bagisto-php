@@ -83,4 +83,8 @@ return [
         'webhook_user' => env('CULQI_WEBHOOK_USER'),
         'webhook_password' => env('CULQI_WEBHOOK_PASSWORD'),
     ],
+
+    'dni' => [
+        'api_url' => env('DNI_API_URL'),
+    ],
 ];

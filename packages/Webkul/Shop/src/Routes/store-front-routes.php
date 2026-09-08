@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use Webkul\Shop\Http\Controllers\BookingProductController;
+use Webkul\Shop\Http\Controllers\ComplaintBookController;
 use Webkul\Shop\Http\Controllers\CompareController;
 use Webkul\Shop\Http\Controllers\HomeController;
 use Webkul\Shop\Http\Controllers\PageController;
@@ -38,6 +39,19 @@ Route::get('contact-us', [HomeController::class, 'contactUs'])
 Route::post('contact-us/send-mail', [HomeController::class, 'sendContactUsMail'])
     ->name('shop.home.contact_us.send_mail')
     ->middleware('cache.response');
+
+/**
+ * Complaint book (Libro de Reclamaciones).
+ */
+Route::get('libro-reclamaciones', [ComplaintBookController::class, 'create'])
+    ->name('shop.complaint_book.create')
+    ->middleware('cache.response');
+
+Route::post('libro-reclamaciones', [ComplaintBookController::class, 'store'])
+    ->name('shop.complaint_book.store');
+
+Route::post('libro-reclamaciones/consultar-documento', [ComplaintBookController::class, 'lookupDocument'])
+    ->name('shop.complaint_book.lookup_document');
 
 /**
  * Store front search.
