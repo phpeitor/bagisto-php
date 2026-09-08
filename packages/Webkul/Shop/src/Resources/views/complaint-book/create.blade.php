@@ -11,7 +11,7 @@
                 @lang('shop::app.complaint-book.create.title')
             </h1>
 
-            <p class="mt-4 text-base text-zinc-500 max-sm:mt-1 max-sm:text-sm">
+            <p class="mt-4 text-base text-zinc-500 max-sm:mt-1 max-sm:text-sm" style="text-align: justify;">
                 @lang('shop::app.complaint-book.create.subtitle')
             </p>
 
