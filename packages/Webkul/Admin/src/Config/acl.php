@@ -315,6 +315,11 @@ return [
         'name' => 'admin::app.acl.delete',
         'route' => 'admin.customers.gdpr.delete',
         'sort' => 2,
+    ], [
+        'key' => 'customers.complaint_book',
+        'name' => 'admin::app.acl.complaint-book',
+        'route' => 'admin.customers.complaint_book.index',
+        'sort' => 7,
     ],
 
     /*

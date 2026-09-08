@@ -1993,6 +1993,41 @@ return [
             ],
         ],
 
+        'complaint-book' => [
+            'index' => [
+                'title' => 'Complaints Book',
+
+                'datagrid' => [
+                    'correlative' => 'No.',
+                    'customer-name' => 'Consumer',
+                    'document-number' => 'Document No.',
+                    'type' => 'Type',
+                    'claim' => 'Claim',
+                    'complaint' => 'Complaint',
+                    'good-type' => 'Good contracted',
+                    'product' => 'Product',
+                    'service' => 'Service',
+                    'good-description' => 'Description',
+                    'status' => 'Status',
+                    'pending' => 'Pending',
+                    'attended' => 'Attended',
+                    'created-at' => 'Created At',
+                    'view' => 'View',
+                ],
+            ],
+
+            'view' => [
+                'title' => 'Complaint detail',
+                'back-btn' => 'Back',
+                'consumer-section' => 'Consumer',
+                'good-section' => 'Good or service contracted',
+                'claim-section' => 'Detail and request',
+                'claimed-amount' => 'Claimed amount',
+                'detail' => 'Detail',
+                'request' => 'Consumer request',
+            ],
+        ],
+
         'reviews' => [
             'index' => [
                 'date' => 'Date',
@@ -4681,6 +4716,7 @@ return [
                 'cms' => 'CMS',
                 'collapse' => 'Collapse',
                 'communications' => 'Communications',
+                'complaint-book' => 'Complaints Book',
                 'configure' => 'Configure',
                 'currencies' => 'Currencies',
                 'customers' => 'Customers',
@@ -4940,6 +4976,7 @@ return [
         'channels' => 'Channels',
         'cms' => 'CMS',
         'communications' => 'Communications',
+        'complaint-book' => 'Complaints Book',
         'configure' => 'Configure',
         'copy' => 'Copy',
         'create' => 'Create',

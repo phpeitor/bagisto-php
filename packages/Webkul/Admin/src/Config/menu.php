@@ -127,6 +127,12 @@ return [
         'route' => 'admin.customers.gdpr.index',
         'sort' => 4,
         'icon' => '',
+    ], [
+        'key' => 'customers.complaint_book',
+        'name' => 'admin::app.components.layouts.sidebar.complaint-book',
+        'route' => 'admin.customers.complaint_book.index',
+        'sort' => 5,
+        'icon' => '',
     ],
 
     /**

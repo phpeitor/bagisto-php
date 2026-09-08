@@ -7,6 +7,7 @@ use Webkul\Admin\Http\Controllers\Customers\Customer\CompareController;
 use Webkul\Admin\Http\Controllers\Customers\Customer\OrderController;
 use Webkul\Admin\Http\Controllers\Customers\Customer\WishlistController;
 use Webkul\Admin\Http\Controllers\Customers\CustomerController;
+use Webkul\Admin\Http\Controllers\Customers\ComplaintBookController;
 use Webkul\Admin\Http\Controllers\Customers\CustomerGroupController;
 use Webkul\Admin\Http\Controllers\Customers\GDPRController;
 use Webkul\Admin\Http\Controllers\Customers\ReviewController;
@@ -125,5 +126,11 @@ Route::prefix('customers')->group(function () {
         Route::put('edit/{id}', 'update')->name('admin.customers.gdpr.update');
 
         Route::delete('delete/{id}', 'delete')->name('admin.customers.gdpr.delete');
+    });
+
+    Route::controller(ComplaintBookController::class)->prefix('complaint-book')->group(function () {
+        Route::get('', 'index')->name('admin.customers.complaint_book.index');
+
+        Route::get('view/{id}', 'view')->name('admin.customers.complaint_book.view');
     });
 });

@@ -1993,6 +1993,41 @@ return [
             ],
         ],
 
+        'complaint-book' => [
+            'index' => [
+                'title' => 'Libro de Reclamaciones',
+
+                'datagrid' => [
+                    'correlative' => 'N.°',
+                    'customer-name' => 'Consumidor',
+                    'document-number' => 'N.° de documento',
+                    'type' => 'Tipo',
+                    'claim' => 'Reclamo',
+                    'complaint' => 'Queja',
+                    'good-type' => 'Bien contratado',
+                    'product' => 'Producto',
+                    'service' => 'Servicio',
+                    'good-description' => 'Descripción',
+                    'status' => 'Estado',
+                    'pending' => 'Pendiente',
+                    'attended' => 'Atendido',
+                    'created-at' => 'Creado en',
+                    'view' => 'Ver',
+                ],
+            ],
+
+            'view' => [
+                'title' => 'Detalle del reclamo',
+                'back-btn' => 'Volver',
+                'consumer-section' => 'Consumidor reclamante',
+                'good-section' => 'Bien contratado',
+                'claim-section' => 'Detalle y pedido',
+                'claimed-amount' => 'Monto reclamado',
+                'detail' => 'Detalle',
+                'request' => 'Pedido del consumidor',
+            ],
+        ],
+
         'reviews' => [
             'index' => [
                 'date' => 'Fecha',
@@ -4681,6 +4716,7 @@ return [
                 'cms' => 'CMS',
                 'collapse' => 'Colapsar',
                 'communications' => 'Comunicaciones',
+                'complaint-book' => 'Libro de Reclamaciones',
                 'configure' => 'Configurar',
                 'currencies' => 'Monedas',
                 'customers' => 'Clientes',
@@ -4940,6 +4976,7 @@ return [
         'channels' => 'Canales',
         'cms' => 'CMS',
         'communications' => 'Comunicaciones',
+        'complaint-book' => 'Libro de Reclamaciones',
         'configure' => 'Configurar',
         'copy' => 'Copiar',
         'create' => 'crear',
