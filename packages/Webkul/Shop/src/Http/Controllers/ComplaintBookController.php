@@ -7,8 +7,10 @@ use Illuminate\Http\JsonResponse;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\View\View;
 use Webkul\Shop\Http\Requests\ComplaintBookRequest;
+use Webkul\Shop\Mail\ComplaintBookConfirmation;
 
 class ComplaintBookController extends Controller
 {
@@ -48,6 +50,12 @@ class ComplaintBookController extends Controller
         $data['correlative'] = ComplaintBookEntry::nextCorrelative();
 
         $entry = ComplaintBookEntry::create($data);
+
+        try {
+            Mail::queue(new ComplaintBookConfirmation($entry));
+        } catch (\Exception $e) {
+            report($e);
+        }
 
         session()->flash('success', trans('shop::app.complaint-book.create.success', [
             'correlative' => $entry->correlative,

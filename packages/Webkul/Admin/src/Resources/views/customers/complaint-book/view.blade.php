@@ -119,6 +119,85 @@
 
         <!-- Right Component -->
         <div class="flex w-[360px] max-w-full flex-col gap-2 max-sm:w-full">
+            @if (bouncer()->hasPermission('customers.complaint_book.edit'))
+                <x-admin::form
+                    :action="route('admin.customers.complaint_book.update', $complaint->id)"
+                    method="PUT"
+                >
+                    <x-admin::accordion>
+                        <x-slot:header>
+                            <p class="w-full p-2.5 text-base font-semibold text-gray-800 dark:text-white">
+                                @lang('admin::app.customers.complaint-book.view.management-section')
+                            </p>
+                        </x-slot:header>
+
+                        <x-slot:content>
+                            <!-- Status -->
+                            <x-admin::form.control-group>
+                                <x-admin::form.control-group.label class="required">
+                                    @lang('admin::app.customers.complaint-book.index.datagrid.status')
+                                </x-admin::form.control-group.label>
+
+                                <x-admin::form.control-group.control
+                                    type="select"
+                                    id="status"
+                                    name="status"
+                                    rules="required"
+                                    :value="$complaint->status"
+                                    :label="trans('admin::app.customers.complaint-book.index.datagrid.status')"
+                                >
+                                    <option value="pendiente" @selected($complaint->status === 'pendiente')>
+                                        @lang('admin::app.customers.complaint-book.index.datagrid.pending')
+                                    </option>
+
+                                    <option value="atendido" @selected($complaint->status === 'atendido')>
+                                        @lang('admin::app.customers.complaint-book.index.datagrid.attended')
+                                    </option>
+                                </x-admin::form.control-group.control>
+
+                                <x-admin::form.control-group.error control-name="status" />
+                            </x-admin::form.control-group>
+
+                            <!-- Admin Notes -->
+                            <x-admin::form.control-group>
+                                <x-admin::form.control-group.label>
+                                    @lang('admin::app.customers.complaint-book.view.admin-notes')
+                                </x-admin::form.control-group.label>
+
+                                <x-admin::form.control-group.control
+                                    type="textarea"
+                                    id="admin_notes"
+                                    name="admin_notes"
+                                    :value="$complaint->admin_notes"
+                                    :label="trans('admin::app.customers.complaint-book.view.admin-notes')"
+                                    :placeholder="trans('admin::app.customers.complaint-book.view.admin-notes-placeholder')"
+                                    rows="4"
+                                />
+
+                                <p class="mt-1 text-xs text-gray-500 dark:text-gray-400">
+                                    @lang('admin::app.customers.complaint-book.view.admin-notes-info')
+                                </p>
+
+                                <x-admin::form.control-group.error control-name="admin_notes" />
+                            </x-admin::form.control-group>
+
+                            @if ($complaint->attended_at)
+                                <p class="mb-3 text-xs text-gray-500 dark:text-gray-400">
+                                    @lang('admin::app.customers.complaint-book.view.attended-at'): {{ $complaint->attended_at }}
+                                </p>
+                            @endif
+
+                            <button
+                                type="submit"
+                                class="primary-button w-full"
+                            >
+                                @lang('admin::app.customers.complaint-book.view.save-btn')
+                            </button>
+                        </x-slot:content>
+                    </x-admin::accordion>
+                </x-admin::form>
+            @endif
+
             <x-admin::accordion>
                 <x-slot:header>
                     <p class="w-full p-2.5 text-base font-semibold text-gray-800 dark:text-white">

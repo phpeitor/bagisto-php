@@ -132,5 +132,7 @@ Route::prefix('customers')->group(function () {
         Route::get('', 'index')->name('admin.customers.complaint_book.index');
 
         Route::get('view/{id}', 'view')->name('admin.customers.complaint_book.view');
+
+        Route::put('view/{id}', 'update')->name('admin.customers.complaint_book.update');
     });
 });

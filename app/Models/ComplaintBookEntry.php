@@ -27,6 +27,17 @@ class ComplaintBookEntry extends Model
         'detail',
         'request',
         'status',
+        'admin_notes',
+        'attended_at',
+    ];
+
+    /**
+     * The attributes that should be cast.
+     *
+     * @var array
+     */
+    protected $casts = [
+        'attended_at' => 'datetime',
     ];
 
     /**

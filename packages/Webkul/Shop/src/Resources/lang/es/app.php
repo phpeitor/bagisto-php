@@ -1291,6 +1291,17 @@ return [
             'to' => 'Para contactar a',
         ],
 
+        'complaint-book' => [
+            'subject' => 'Hemos recibido tu reclamo N.° :correlative',
+            'greeting' => 'Hola :name,',
+            'confirmation' => 'Hemos registrado tu reclamo con el número <strong>:correlative</strong> en nuestro Libro de Reclamaciones. Este es el detalle que enviaste:',
+            'response-time' => 'Te responderemos en un plazo no mayor a 15 días hábiles a este mismo correo. Conserva tu número de reclamo para cualquier consulta de seguimiento.',
+            'resolved-subject' => 'Actualización de tu reclamo N.° :correlative',
+            'resolved-intro' => 'Te contamos que tu reclamo <strong>:correlative</strong> ha sido atendido.',
+            'resolved-response' => 'Respuesta',
+            'resolved-footer' => 'Si tienes alguna consulta adicional sobre esta respuesta, puedes escribirnos respondiendo a este correo.',
+        ],
+
         'orders' => [
             'created' => [
                 'greeting' => 'Gracias por su pedido :order_id, realizado el :created_at',

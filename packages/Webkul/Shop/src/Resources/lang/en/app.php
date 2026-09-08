@@ -1291,6 +1291,17 @@ return [
             'to' => 'To contact',
         ],
 
+        'complaint-book' => [
+            'subject' => 'We have received your complaint No. :correlative',
+            'greeting' => 'Hi :name,',
+            'confirmation' => 'We have registered your complaint with number <strong>:correlative</strong> in our Complaints Book. Here is what you submitted:',
+            'response-time' => 'We will respond within a maximum of 15 business days to this same email. Please keep your complaint number for any follow-up.',
+            'resolved-subject' => 'Update on your complaint No. :correlative',
+            'resolved-intro' => 'We\'d like to let you know that your complaint <strong>:correlative</strong> has been attended to.',
+            'resolved-response' => 'Response',
+            'resolved-footer' => 'If you have any further questions about this response, you can reply directly to this email.',
+        ],
+
         'orders' => [
             'created' => [
                 'greeting' => 'Thanks for your Order :order_id placed on :created_at',

@@ -2025,6 +2025,13 @@ return [
                 'claimed-amount' => 'Monto reclamado',
                 'detail' => 'Detalle',
                 'request' => 'Pedido del consumidor',
+                'management-section' => 'Gestión del reclamo',
+                'admin-notes' => 'Observaciones y acciones adoptadas',
+                'admin-notes-placeholder' => 'Describe cómo se atendió este reclamo...',
+                'admin-notes-info' => 'Si cambias el estado a "Atendido", esta observación se enviará por correo al consumidor.',
+                'attended-at' => 'Atendido el',
+                'save-btn' => 'Guardar',
+                'update-success' => 'Reclamo actualizado con éxito.',
             ],
         ],
 

@@ -2025,6 +2025,13 @@ return [
                 'claimed-amount' => 'Claimed amount',
                 'detail' => 'Detail',
                 'request' => 'Consumer request',
+                'management-section' => 'Complaint management',
+                'admin-notes' => 'Observations and actions taken',
+                'admin-notes-placeholder' => 'Describe how this complaint was handled...',
+                'admin-notes-info' => 'If you change the status to "Attended", this note will be emailed to the consumer.',
+                'attended-at' => 'Attended on',
+                'save-btn' => 'Save',
+                'update-success' => 'Complaint updated successfully.',
             ],
         ],
 

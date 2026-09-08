@@ -320,6 +320,11 @@ return [
         'name' => 'admin::app.acl.complaint-book',
         'route' => 'admin.customers.complaint_book.index',
         'sort' => 7,
+    ], [
+        'key' => 'customers.complaint_book.edit',
+        'name' => 'admin::app.acl.edit',
+        'route' => 'admin.customers.complaint_book.update',
+        'sort' => 1,
     ],
 
     /*
