@@ -117,7 +117,7 @@
                                 {!! view_render_event('bagisto.shop.checkout.onepage.summary.culqi.before') !!}
 
                                 <!-- Culqi Checkout Vue Component -->
-                                <v-culqi-checkout></v-culqi-checkout>
+                                <v-culqi-checkout :grand-total="cart.formatted_grand_total"></v-culqi-checkout>
 
                                 {!! view_render_event('bagisto.shop.checkout.onepage.summary.culqi.after') !!}
                             </template>

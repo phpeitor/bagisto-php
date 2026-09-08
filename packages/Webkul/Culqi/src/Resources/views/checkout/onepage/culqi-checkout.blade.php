@@ -20,7 +20,7 @@
             <x-shop::button
                 type="button"
                 class="primary-button w-max rounded-2xl bg-navyBlue px-11 py-3 max-md:mb-4 max-md:w-full max-md:max-w-full max-md:rounded-lg max-sm:py-1.5"
-                :title="trans('shop::app.checkout.onepage.summary.place-order')"
+                ::title="payLabel"
                 ::disabled="isProcessing"
                 ::loading="isProcessing"
                 @click="pay"
@@ -31,10 +31,25 @@
             app.component('v-culqi-checkout', {
                 template: '#v-culqi-checkout-template',
 
+                props: {
+                    grandTotal: {
+                        type: String,
+                        default: '',
+                    },
+                },
+
                 data() {
                     return {
                         isProcessing: false,
                     };
+                },
+
+                computed: {
+                    payLabel() {
+                        const label = '@lang('culqi::app.checkout.pay')';
+
+                        return this.grandTotal ? `${label} ${this.grandTotal}` : label;
+                    },
                 },
 
                 methods: {
