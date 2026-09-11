@@ -107,4 +107,19 @@
         {!! view_render_event('bagisto.shop.customers.account.downloadable_products.list.after') !!}
 
     </div>
+
+    @push('scripts')
+        <script type="module">
+            /**
+             * Downloads open in a new tab (target="_blank"), so the "Remaining
+             * Downloads" grid on this tab has no way to know a download just
+             * happened. Refresh it when the user comes back to this tab.
+             */
+            document.addEventListener('visibilitychange', () => {
+                if (document.visibilityState === 'visible') {
+                    window.app.config.globalProperties.$emitter.emit('datagrid:refresh');
+                }
+            });
+        </script>
+    @endpush
 </x-shop::layouts.account>

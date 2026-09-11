@@ -137,6 +137,14 @@
 
             mounted() {
                 this.boot();
+
+                this.handleExternalRefresh = () => this.get();
+
+                this.$emitter.on('datagrid:refresh', this.handleExternalRefresh);
+            },
+
+            beforeUnmount() {
+                this.$emitter.off('datagrid:refresh', this.handleExternalRefresh);
             },
 
             methods: {
