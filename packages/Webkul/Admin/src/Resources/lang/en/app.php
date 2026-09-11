@@ -1289,6 +1289,7 @@ return [
                                 'file' => 'File',
                                 'file-type' => 'File Type',
                                 'name' => 'Title',
+                                'none' => 'None',
                                 'price' => 'Price',
                                 'sample' => 'Sample',
                                 'sample-type' => 'Sample Type',

@@ -1289,6 +1289,7 @@ return [
                                 'file' => 'Archivo',
                                 'file-type' => 'Tipo de archivo',
                                 'name' => 'Título',
+                                'none' => 'Ninguno',
                                 'price' => 'Precio',
                                 'sample' => 'Muestra',
                                 'sample-type' => 'Tipo de muestra',

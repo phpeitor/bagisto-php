@@ -451,6 +451,10 @@
                                             name="sample_type"
                                             v-model="selectedLink.sample_type"
                                         >
+                                            <option value="">
+                                                @lang('admin::app.catalog.products.edit.types.downloadable.links.update-create.none')
+                                            </option>
+
                                             <option value="file">
                                                 @lang('admin::app.catalog.products.edit.types.downloadable.links.update-create.file')
                                             </option>
@@ -505,8 +509,8 @@
                                         </x-admin::form.control-group>
                                     </template>
 
-                                    <!-- Else URL -->
-                                    <template v-else>
+                                    <!-- Else If Type is URL -->
+                                    <template v-else-if="selectedLink.sample_type == 'url'">
                                         <x-admin::form.control-group class="flex-1">
                                             <x-admin::form.control-group.label class="required">
                                                 @lang('admin::app.catalog.products.edit.types.downloadable.links.update-create.url')
@@ -519,7 +523,7 @@
                                                 v-model="selectedLink.sample_url"
                                                 :label="trans('admin::app.catalog.products.edit.types.downloadable.links.update-create.url')"
                                             />
-                    
+
                                             <x-admin::form.control-group.error control-name="sample_url" />
                                         </x-admin::form.control-group>
                                     </template>
@@ -878,6 +882,8 @@
 
                         this.links.push(params);
                     } else {
+                        params.id = this.selectedLink.id;
+
                         const indexToUpdate = this.links.findIndex(link => link.id === params.id);
 
                         this.links[indexToUpdate] = params;
@@ -924,7 +930,7 @@
                         file_name: '',
                         file_url: '',
                         url: '',
-                        sample_type: 'file',
+                        sample_type: '',
                         sample_file: '',
                         sample_file_name: '',
                         sample_file_url: '',
@@ -956,6 +962,8 @@
 
                         this.samples.push(params);
                     } else {
+                        params.id = this.selectedSample.id;
+
                         const indexToUpdate = this.samples.findIndex(link => link.id === params.id);
 
                         this.samples[indexToUpdate] = params;
