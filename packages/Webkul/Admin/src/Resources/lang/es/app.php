@@ -1274,6 +1274,8 @@ return [
                         'links' => [
                             'add-btn' => 'Agregar enlace',
                             'delete-btn' => 'Eliminar',
+                            'delete-error' => 'Ocurrió un error al eliminar el enlace.',
+                            'delete-success' => 'Enlace eliminado correctamente.',
                             'edit-btn' => 'Editar',
                             'empty-info' => 'Para crear un enlace sobre la marcha.',
                             'empty-title' => 'Agregar enlace',
@@ -1281,6 +1283,8 @@ return [
                             'info' => 'El tipo de producto descargable permite vender productos digitales como libros electrónicos, aplicaciones de software, música, juegos, etc.',
                             'sample-file' => 'Archivo de ejemplo: ',
                             'sample-url' => 'URL de ejemplo: ',
+                            'save-error' => 'Ocurrió un error al guardar el enlace.',
+                            'save-success' => 'Enlace guardado correctamente.',
                             'title' => 'Enlaces descargables',
                             'url' => 'URL: ',
 

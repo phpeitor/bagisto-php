@@ -1274,6 +1274,8 @@ return [
                         'links' => [
                             'add-btn' => 'Add Link',
                             'delete-btn' => 'Delete',
+                            'delete-error' => 'Something went wrong while deleting the link.',
+                            'delete-success' => 'Link deleted successfully.',
                             'edit-btn' => 'Edit',
                             'empty-info' => 'To create link on a go.',
                             'empty-title' => 'Add Link',
@@ -1281,6 +1283,8 @@ return [
                             'info' => 'Downloadable product type allows to sell digital products, such as eBooks, software applications, music, games, etc.',
                             'sample-file' => 'Sample File : ',
                             'sample-url' => 'Sample URL : ',
+                            'save-error' => 'Something went wrong while saving the link.',
+                            'save-success' => 'Link saved successfully.',
                             'title' => 'Downloadable Links',
                             'url' => 'URL : ',
 

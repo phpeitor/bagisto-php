@@ -128,6 +128,12 @@ Route::prefix('catalog')->group(function () {
 
         Route::controller(DownloadableController::class)->group(function () {
             Route::get('{id}/downloadable-options', 'options')->name('admin.catalog.products.downloadable.options');
+
+            Route::post('{id}/downloadable-links', 'storeLink')->name('admin.catalog.products.downloadable_links.store');
+
+            Route::put('{id}/downloadable-links/{linkId}', 'updateLink')->name('admin.catalog.products.downloadable_links.update');
+
+            Route::delete('{id}/downloadable-links/{linkId}', 'destroyLink')->name('admin.catalog.products.downloadable_links.destroy');
         });
 
         Route::controller(VirtualController::class)->group(function () {

@@ -285,7 +285,10 @@
                                         @lang('admin::app.catalog.products.edit.types.downloadable.links.update-create.title')
                                     </p>
 
-                                    <button class="primary-button ltr:mr-11 rtl:ml-11">
+                                    <button
+                                        class="primary-button ltr:mr-11 rtl:ml-11"
+                                        :disabled="isSaving"
+                                    >
                                         @lang('admin::app.catalog.products.edit.types.downloadable.links.update-create.save-btn')
                                     </button>
                                 </div>
@@ -872,26 +875,50 @@
                     links: @json($product->downloadable_links->sortBy('sort_order')->values()->all()),
 
                     selectedLink: {},
+
+                    isSaving: false,
                 }
             },
 
             methods: {
-                updateOrCreate(params) {
-                    if (this.selectedLink.id == undefined) {
-                        params.id = 'link_' + this.links.length;
+                updateOrCreate(params, { setErrors }) {
+                    this.isSaving = true;
 
-                        this.links.push(params);
-                    } else {
-                        params.id = this.selectedLink.id;
+                    params.sort_order = this.selectedLink.id == undefined ? this.links.length : this.selectedLink.sort_order;
 
-                        const indexToUpdate = this.links.findIndex(link => link.id === params.id);
+                    const linksUrl = "{{ route('admin.catalog.products.downloadable_links.store', $product->id) }}";
 
-                        this.links[indexToUpdate] = params;
-                    }
+                    let request = this.selectedLink.id == undefined
+                        ? this.$axios.post(linksUrl, params)
+                        : this.$axios.put(linksUrl + '/' + this.selectedLink.id, params);
 
-                    this.resetForm();
+                    request
+                        .then((response) => {
+                            this.isSaving = false;
 
-                    this.$refs.updateCreateLinkDrawer.close();
+                            if (this.selectedLink.id == undefined) {
+                                this.links.push(response.data);
+                            } else {
+                                const indexToUpdate = this.links.findIndex(link => link.id === this.selectedLink.id);
+
+                                this.links[indexToUpdate] = response.data;
+                            }
+
+                            this.$emitter.emit('add-flash', { type: 'success', message: '@lang('admin::app.catalog.products.edit.types.downloadable.links.save-success')' });
+
+                            this.resetForm();
+
+                            this.$refs.updateCreateLinkDrawer.close();
+                        })
+                        .catch((error) => {
+                            this.isSaving = false;
+
+                            if (error.response?.status == 422) {
+                                setErrors(error.response.data.errors);
+                            } else {
+                                this.$emitter.emit('add-flash', { type: 'error', message: '@lang('admin::app.catalog.products.edit.types.downloadable.links.save-error')' });
+                            }
+                        });
                 },
 
                 uploadFile(type) {
@@ -915,9 +942,17 @@
                 remove(link) {
                     this.$emitter.emit('open-confirm-modal', {
                         agree: () => {
-                            let index = this.links.indexOf(link);
+                            this.$axios.delete("{{ route('admin.catalog.products.downloadable_links.store', $product->id) }}/" + link.id)
+                                .then(() => {
+                                    let index = this.links.indexOf(link);
 
-                            this.links.splice(index, 1);
+                                    this.links.splice(index, 1);
+
+                                    this.$emitter.emit('add-flash', { type: 'success', message: '@lang('admin::app.catalog.products.edit.types.downloadable.links.delete-success')' });
+                                })
+                                .catch(() => {
+                                    this.$emitter.emit('add-flash', { type: 'error', message: '@lang('admin::app.catalog.products.edit.types.downloadable.links.delete-error')' });
+                                });
                         }
                     });
                 },
