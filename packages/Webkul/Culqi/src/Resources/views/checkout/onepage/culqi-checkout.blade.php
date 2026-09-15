@@ -66,25 +66,28 @@
                             .then(response => {
                                 const amount = Math.round(parseFloat(response.data.data.grand_total) * 100);
 
-                                this.openCulqi(amount);
+                                // Billetera, banca móvil, agente and Cuotéalo don't tokenize —
+                                // they confirm payment asynchronously against a pre-created
+                                // Culqi Order, so it has to exist before the widget opens.
+                                return this.$axios.post("{{ route('culqi.order.create') }}")
+                                    .then(orderResponse => {
+                                        this.openCulqi(amount, orderResponse.data.order_id);
+                                    });
                             })
                             .catch(error => {
                                 this.isProcessing = false;
 
-                                this.$emitter.emit('add-flash', { type: 'error', message: '@lang('culqi::app.errors.something-went-wrong')' });
+                                this.$emitter.emit('add-flash', { type: 'error', message: error.response?.data?.message || '@lang('culqi::app.errors.something-went-wrong')' });
                             });
                     },
 
-                    openCulqi(amount) {
-                        // `billetera`, `bancaMovil`, `agente` and `cuotealo` generate a
-                        // Culqi `Order` (not a token) and need a backend endpoint that
-                        // pre-creates that order before the checkout opens, plus webhook
-                        // reconciliation on our side. Keep them off until that's built.
+                    openCulqi(amount, orderId) {
                         const culqiCheckout = new CulqiCheckout("{{ $publicKey }}", {
                             settings: {
                                 title: "{{ $storeName }}",
                                 currency: "{{ $currencyCode }}",
                                 amount: amount,
+                                order: orderId,
                             },
 
                             options: {
@@ -94,10 +97,10 @@
                                 paymentMethods: {
                                     tarjeta: true,
                                     yape: true,
-                                    billetera: false,
-                                    bancaMovil: false,
-                                    agente: false,
-                                    cuotealo: false,
+                                    billetera: true,
+                                    bancaMovil: true,
+                                    agente: true,
+                                    cuotealo: true,
                                 },
                             },
                         });
@@ -110,9 +113,18 @@
                             }
 
                             if (culqiCheckout.token) {
+                                // Tarjeta / Yape: tokenized, charged synchronously.
                                 culqiCheckout.close();
 
                                 this.charge(culqiCheckout.token.id);
+                            } else if (culqiCheckout.order) {
+                                // Billetera / banca móvil / agente / Cuotéalo: the customer
+                                // already saw the payment instructions inside Culqi's modal.
+                                // We just record the order as pending — the webhook confirms
+                                // it later.
+                                culqiCheckout.close();
+
+                                this.placeOrder(culqiCheckout.order.id);
                             } else {
                                 this.isProcessing = false;
 
@@ -132,6 +144,22 @@
 
                         this.$axios.post("{{ route('culqi.charge') }}", {
                                 token_id: tokenId,
+                            })
+                            .then(response => {
+                                window.location.href = "{{ route('shop.checkout.onepage.success') }}";
+                            })
+                            .catch(error => {
+                                this.isProcessing = false;
+
+                                this.$emitter.emit('add-flash', { type: 'error', message: error.response?.data?.message || '@lang('culqi::app.errors.something-went-wrong')' });
+                            });
+                    },
+
+                    placeOrder(culqiOrderId) {
+                        this.isProcessing = true;
+
+                        this.$axios.post("{{ route('culqi.order.place') }}", {
+                                order_id: culqiOrderId,
                             })
                             .then(response => {
                                 window.location.href = "{{ route('shop.checkout.onepage.success') }}";
