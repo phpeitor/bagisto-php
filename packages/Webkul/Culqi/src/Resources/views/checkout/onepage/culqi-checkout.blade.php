@@ -11,7 +11,7 @@
     @endphp
 
     @pushOnce('scripts')
-        <script src="https://checkout.culqi.com/js/v4"></script>
+        <script src="https://js.culqi.com/checkout-js"></script>
 
         <script
             type="text/x-template"
@@ -54,7 +54,7 @@
 
                 methods: {
                     pay() {
-                        if (typeof Culqi == 'undefined') {
+                        if (typeof CulqiCheckout == 'undefined') {
                             this.$emitter.emit('add-flash', { type: 'error', message: '@lang('culqi::app.errors.invalid-configs')' });
 
                             return;
@@ -76,38 +76,53 @@
                     },
 
                     openCulqi(amount) {
-                        Culqi.publicKey = "{{ $publicKey }}";
+                        // `billetera`, `bancaMovil`, `agente` and `cuotealo` generate a
+                        // Culqi `Order` (not a token) and need a backend endpoint that
+                        // pre-creates that order before the checkout opens, plus webhook
+                        // reconciliation on our side. Keep them off until that's built.
+                        const culqiCheckout = new CulqiCheckout("{{ $publicKey }}", {
+                            settings: {
+                                title: "{{ $storeName }}",
+                                currency: "{{ $currencyCode }}",
+                                amount: amount,
+                            },
 
-                        Culqi.settings({
-                            title: "{{ $storeName }}",
-                            currency: "{{ $currencyCode }}",
-                            amount: amount,
+                            options: {
+                                lang: 'auto',
+                                installments: false,
+                                modal: true,
+                                paymentMethods: {
+                                    tarjeta: true,
+                                    yape: true,
+                                    billetera: false,
+                                    bancaMovil: false,
+                                    agente: false,
+                                    cuotealo: false,
+                                },
+                            },
                         });
 
-                        Culqi.options({
-                            lang: 'auto',
-                            installments: false,
-                        });
-
-                        window.culqi = () => {
+                        culqiCheckout.culqi = () => {
                             // Guards against a duplicate charge if Culqi's own button fires
                             // this callback more than once (e.g. a double click inside the modal).
                             if (this.isProcessing) {
                                 return;
                             }
 
-                            if (Culqi.token) {
-                                this.charge(Culqi.token.id);
+                            if (culqiCheckout.token) {
+                                culqiCheckout.close();
+
+                                this.charge(culqiCheckout.token.id);
                             } else {
                                 this.isProcessing = false;
 
-                                if (Culqi.error) {
-                                    this.$emitter.emit('add-flash', { type: 'error', message: Culqi.error.user_message || '@lang('culqi::app.errors.something-went-wrong')' });
+                                if (culqiCheckout.error) {
+                                    this.$emitter.emit('add-flash', { type: 'error', message: culqiCheckout.error.user_message || culqiCheckout.error.message || '@lang('culqi::app.errors.something-went-wrong')' });
                                 }
                             }
                         };
 
-                        Culqi.open();
+                        culqiCheckout.open();
 
                         this.isProcessing = false;
                     },
