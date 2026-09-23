@@ -1,4 +1,4 @@
-# Estándares de Base de Datos — etlweb (Bagisto)
+# Estándares de Base de Datos (Bagisto)
 
 MySQL (`pdo_mysql`), acceso directo disponible en este entorno vía `artisan tinker` sobre la **base de datos de producción** (`metadatape.com`). Tratar cada operación como productiva — no hay entorno de staging separado accesible desde aquí.
 

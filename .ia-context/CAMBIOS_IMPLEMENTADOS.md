@@ -2,7 +2,7 @@
 
 Fecha de actualizacion: 2026-09-07
 
-## 1 Proyecto etlweb (Bagisto)
+## 1 Proyecto (Bagisto)
 
 ### Soporte GIF en categorias (admin + backend)
 - Archivo: `packages/Webkul/Admin/src/Http/Requests/CategoryRequest.php`

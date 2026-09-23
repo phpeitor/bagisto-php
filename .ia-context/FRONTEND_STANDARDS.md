@@ -1,4 +1,4 @@
-# Estándares Frontend — etlweb (Bagisto)
+# Estándares Frontend (Bagisto)
 
 Reglas prácticas para trabajar en `packages/Webkul/Shop` y `packages/Webkul/Admin`. Ver `FRONTEND_ARQUITECTURE.md` para el porqué de cada patrón.
 

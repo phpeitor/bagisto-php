@@ -1,4 +1,4 @@
-# Estándares Backend — etlweb (Bagisto)
+# Estándares Backend (Bagisto)
 
 Reglas prácticas de código y operación para `packages/Webkul/*` y `config/*`. Ver `BACKEND_ARQUITECTURE.md` para el contexto de cada patrón.
 

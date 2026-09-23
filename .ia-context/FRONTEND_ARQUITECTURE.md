@@ -1,4 +1,4 @@
-# Arquitectura Frontend — etlweb (Bagisto)
+# Arquitectura Frontend (Bagisto)
 
 Contexto real del repo (no genérico). Proyecto: **Bagisto** (Laravel 11 + PHP 8.2), tienda `metadatape.com` (theme "PHPeitor Store"). El frontend NO es una SPA: es **Blade first**, con **Vue 3** montado como una única instancia global por área (storefront / admin) que hidrata componentes declarados inline en Blade.
 

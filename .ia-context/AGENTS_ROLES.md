@@ -1,4 +1,4 @@
-# Roles de Agentes IA — etlweb (Bagisto)
+# Roles de Agentes IA (Bagisto)
 
 Este proyecto se itera con asistencia de agentes IA (Claude Code u otros) directamente sobre el código y, cuando hace falta, sobre la base de datos de producción de `metadatape.com`. Este documento define roles, alcance y protocolo de trabajo para que cualquier agente que entre a este repo produzca resultados consistentes con los estándares ya definidos, sin tener que re-descubrirlos cada vez.
 

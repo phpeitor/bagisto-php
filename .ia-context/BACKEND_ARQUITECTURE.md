@@ -1,4 +1,4 @@
-# Arquitectura Backend — etlweb (Bagisto)
+# Arquitectura Backend (Bagisto)
 
 Laravel 11 + PHP 8.2. **No es un Laravel "app/" monolítico**: casi todo el código vive en paquetes propios bajo `packages/Webkul/*`, instalados como *path repositories* de Composer (no son vendors de terceros — son código del proyecto, se editan directamente).
 
